@@ -3,6 +3,7 @@ import 'package:prabhudemo1/drawer.dart';
 import "package:http/http.dart" as http;
 import 'dart:convert';
 class HomePage extends StatefulWidget {
+  static const String routeName = "/home";
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -38,6 +39,13 @@ setState(() {});
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text("Awesome App"),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.exit_to_app),
+          onPressed: (){
+//            Navigator.pop(context)
+          },
+          )
+        ],
       ),
       body: data != null?ListView.builder(
           itemBuilder: (context, index, ){
