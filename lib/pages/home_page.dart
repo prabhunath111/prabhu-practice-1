@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:prabhudemo1/drawer.dart';
 import "package:http/http.dart" as http;
+import 'package:prabhudemo1/pages/login_page.dart';
 import 'dart:convert';
+import 'package:prabhudemo1/utils/constants.dart';
+
 class HomePage extends StatefulWidget {
   static const String routeName = "/home";
   @override
@@ -42,7 +45,8 @@ setState(() {});
         actions: <Widget>[
           IconButton(icon: Icon(Icons.exit_to_app),
           onPressed: (){
-//            Navigator.pop(context)
+            Constants.prefs.setBool("loggedIn", false);
+            Navigator.pushReplacementNamed(context, LoginPage.routeName);
           },
           )
         ],
