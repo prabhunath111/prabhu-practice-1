@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:prabhudemo1/pages/home_page.dart';
+import 'package:prabhudemo1/pages/home_page_with_fb.dart';
 import 'package:prabhudemo1/pages/login_page.dart';
 import 'package:prabhudemo1/utils/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,7 +13,7 @@ Future main() async{
   Constants.prefs = await SharedPreferences.getInstance();
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Constants.prefs.getBool("loggedIn") == true?HomePage():LoginPage(),
+    home: Constants.prefs.getBool("loggedIn") == true?HomePageFB():LoginPage(),
     theme: ThemeData(primarySwatch: Colors.purple),
     routes: {
       LoginPage.routeName:(context)=> LoginPage(),
